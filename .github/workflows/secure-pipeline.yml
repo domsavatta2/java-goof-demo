@@ -4,15 +4,9 @@ on:
   push:
     branches:
       - 'master'
-    paths:
-      - 'todolist-goof/**'
-      - '.github/workflows/secure-pipeline.yaml'
   pull_request:
     branches:
-      - 'master'
-    paths:
-      - 'todolist-goof/**'
-      - '.github/workflows/secure-pipeline.yaml'
+      - 'master'    
 
 jobs:
   build-todolist-image:
