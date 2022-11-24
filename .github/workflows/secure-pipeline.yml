@@ -3,7 +3,7 @@ name: java-goof image build and deployment
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'todolist-goof/**'
       - '.github/workflows/todolist-goof-docker-image.yaml'

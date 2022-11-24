@@ -8,5 +8,5 @@ It's divided into modules, each one having its own README:
 <<<<<<< HEAD
 * [Quickstart for running Todolist in Kubernetes](README-K8S.md)
 =======
-* [Quickstart for running both Todolist with Log4Shell in Kubernetes](README-K8S.md)
+* [Quickstart for running Todolist in Kubernetes](README-K8S.md)
 >>>>>>> 4070a4879bed7f6dfad827d29fe7bb43be22c520
