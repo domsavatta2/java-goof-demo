@@ -6,13 +6,13 @@ on:
       - 'master'
     paths:
       - 'todolist-goof/**'
-      - '.github/workflows/todolist-goof-docker-image.yaml'
+      - '.github/workflows/secure-pipeline.yaml'
   pull_request:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'todolist-goof/**'
-      - '.github/workflows/todolist-goof-docker-image.yaml'
+      - '.github/workflows/secure-pipeline.yaml'
 
 jobs:
   build-todolist-image:
