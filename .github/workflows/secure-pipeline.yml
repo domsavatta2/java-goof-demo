@@ -70,4 +70,4 @@ jobs:
 
       - name: Deploy to EKS
         run: |
-          cd todolist-goof/k8s/ && kubectl apply -f java-goof.yaml
+          kubectl apply -f java-goof.yaml
