@@ -8,4 +8,3 @@ It's divided into modules, each one having its own README:
 
 * [Quickstart for running Todolist in Kubernetes](README-K8S.md)
 
-* [Quickstart for running Todolist in Kubernetes](README-K8S.md)
