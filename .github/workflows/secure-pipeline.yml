@@ -33,12 +33,12 @@ jobs:
           tags: java-goof:latest
 
       # Runs a set of commands using the runners shell
-      - name: Running Open Source Security by Snyk
-        run: |
-          curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.210.0/snyk-linux" 
-          chmod -R +x ./snyk 
-          ./snyk auth ${{ secrets.SNYK_TOKEN }} 
-#          ./snyk monitor
+      #- name: Running Open Source Security by Snyk
+      #  run: |
+      #    curl -Lo ./snyk "https://github.com/snyk/snyk/releases/download/v1.210.0/snyk-linux" 
+      #    chmod -R +x ./snyk 
+      #    ./snyk auth ${{ secrets.SNYK_TOKEN }} 
+     #     ./snyk monitor
 
       - name: Install kubectl
         uses: azure/setup-kubectl@v2.0
