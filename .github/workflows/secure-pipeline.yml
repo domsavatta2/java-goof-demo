@@ -57,15 +57,15 @@ jobs:
         run: |
           DOCKER_BUILDKIT=1 docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           docker push -a $ECR_REGISTRY/$ECR_REPOSITORY
-          export CLOUD_ONE_API_KEY=${{ secrets.TMAS_API_KEY }}
-          curl -s -L https://gist.github.com/raphabot/abae09b46c29afc7c3b918b7b8ec2a5c/raw/ | bash
-          tmas scan registry:$ECR_REGISTRY/$ECR_REPOSITORY  
 
-  #    - name: Trend Cloud One Container Security Scan Action
-  #      run: |
-  #        export CLOUD_ONE_API_KEY=${{ secrets.TMAS_API_KEY }}
-  #       curl -s -L https://gist.github.com/raphabot/abae09b46c29afc7c3b918b7b8ec2a5c/raw/ | bash
-  #       tmas scan registry:$ECR_REGISTRY/$ECR_REPOSITORY
+      - name: Trend Cloud One Container Security Scan Action
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: cs-reinvent-demo      
+        run: |
+         export CLOUD_ONE_API_KEY=${{ secrets.TMAS_API_KEY }}
+         curl -s -L https://gist.github.com/raphabot/abae09b46c29afc7c3b918b7b8ec2a5c/raw/ | bash
+         tmas scan registry:$ECR_REGISTRY/$ECR_REPOSITORY
 
       - name: Update kube config
         run: aws eks update-kubeconfig --name adorable-creature-1669314578 --region us-west-2  
