@@ -61,6 +61,8 @@ jobs:
       - name: Trend Cloud One Container Security Scan Action
         run: |
           export CLOUD_ONE_API_KEY=${{ secrets.TMAS_API_KEY }}
+          echo $ECR_REGISTRY
+          echo $ECR_REPOSITORY
           curl -s -L https://gist.github.com/raphabot/abae09b46c29afc7c3b918b7b8ec2a5c/raw/ | bash
           tmas scan registry:$ECR_REGISTRY/$ECR_REPOSITORY
 
