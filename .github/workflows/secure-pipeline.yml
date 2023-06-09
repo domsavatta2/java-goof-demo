@@ -59,7 +59,7 @@ jobs:
           docker push -a $ECR_REGISTRY/$ECR_REPOSITORY  
 
       - name: Trend Cloud One Container Security Scan Action
-        uses: trendmicro/cloudone-container-security-github-action@version*
+        uses: trendmicro/cloudone-container-security-github-action@1.0.8
         with:
             # Mandatory
             CLOUD_ONE_API_KEY: ${{ secrets.TMAS_API_KEY }}
