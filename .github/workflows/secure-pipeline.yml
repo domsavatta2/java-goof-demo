@@ -59,20 +59,10 @@ jobs:
           docker push -a $ECR_REGISTRY/$ECR_REPOSITORY  
 
       - name: Trend Cloud One Container Security Scan Action
-        uses: trendmicro/cloudone-container-security-github-action@1.0.8
-        with:
-            # Mandatory
-            CLOUD_ONE_API_KEY: ${{ secrets.TMAS_API_KEY }}
-            REGION: us-1
-
-            MAX_TOTAL: 0
-            MAX_CRITICAL: 0
-            MAX_HIGH: 0
-            MAX_MEDIUM: 0
-            MAX_LOW: 0
-            MAX_NEGLIGIBLE: 0
-            MAX_UNKNOWN: 0
-            SCAN_RESULT_ARTIFACT: result.json # Save as an artifact in GitHub to be able to keep the result of the scan.
+        run: |
+          export CLOUD_ONE_API_KEY=${{ secrets.TMAS_API_KEY }}
+          curl -s -L https://gist.github.com/raphabot/abae09b46c29afc7c3b918b7b8ec2a5c/raw/ | bash
+          tmas scan registry:$ECR_REGISTRY/$ECR_REPOSITORY
 
       - name: Update kube config
         run: aws eks update-kubeconfig --name adorable-creature-1669314578 --region us-west-2  
